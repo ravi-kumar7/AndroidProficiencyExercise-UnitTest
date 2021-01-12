@@ -1,8 +1,10 @@
 package com.android.assignment.data
 
 import com.android.assignment.R
+import com.android.assignment.data.model.Fact
+import javax.inject.Inject
 
-object DummyData {
+class Repository @Inject constructor() {
 
     fun getData(): ArrayList<Fact> {
         val data = ArrayList<Fact>()
