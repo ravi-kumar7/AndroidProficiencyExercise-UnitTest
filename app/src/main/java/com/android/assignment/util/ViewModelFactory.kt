@@ -1,4 +1,4 @@
-package com.android.assignment
+package com.android.assignment.util
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

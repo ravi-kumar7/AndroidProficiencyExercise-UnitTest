@@ -4,4 +4,8 @@
     <string name="imageMore">More</string>
     <string name="default_title">No title</string>
     <string name="default_description">No description available</string>
+    <string name="network_error">No Internet Connection</string>
+    <string name="error">Something went wrong :(</string>
+    <string name="retry">Retry</string>
+    <string name="loading">loading…</string>
 </resources>

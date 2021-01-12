@@ -24,6 +24,9 @@ allprojects {
 ext {
     dagger_version = '2.30.1'
     lifecycle_version = '2.2.0'
+    version_retrofit = '2.9.0'
+    version_glide = "4.11.0"
+    Interceptor_version = '4.9.0'
 }
 
 task clean(type: Delete) {

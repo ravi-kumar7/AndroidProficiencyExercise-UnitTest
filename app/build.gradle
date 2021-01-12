@@ -23,7 +23,11 @@ android {
     }
 
     buildTypes {
+        debug{
+            buildConfigField "String", 'BASE_URL', '"https://dl.dropboxusercontent.com"'
+        }
         release {
+            buildConfigField "String", 'BASE_URL', '"https://dl.dropboxusercontent.com"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -55,4 +59,18 @@ dependencies {
     implementation "com.google.dagger:dagger-android:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$version_retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$version_retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$version_retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$Interceptor_version"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$version_glide"
+    kapt "com.github.bumptech.glide:compiler:$version_glide"
+
+    //rxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 }
