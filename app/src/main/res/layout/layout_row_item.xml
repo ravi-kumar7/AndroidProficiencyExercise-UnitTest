@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/row_height"
+    android:layout_margin="@dimen/row_margin"
     android:padding="@dimen/row_padding"
-    android:background="@drawable/row_background"
-    >
+    android:background="@drawable/row_background">
 
     <TextView
         android:id="@+id/tv_article_title"
@@ -26,9 +24,10 @@
         android:id="@+id/tv_article_description"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
+        android:ellipsize="end"
         android:text="@string/default_description"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,7 +40,7 @@
         android:layout_width="@dimen/image_width"
         android:layout_height="@dimen/image_height"
         android:layout_gravity="start"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@color/black"
         android:contentDescription="@string/factImageDescription"
         android:src="@drawable/ic_image"
@@ -52,7 +51,6 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:contentDescription="@string/imageMore"
         android:src="@drawable/ic_right"
         app:layout_constraintBottom_toBottomOf="parent"
