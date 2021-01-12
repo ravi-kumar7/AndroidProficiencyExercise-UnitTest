@@ -3,7 +3,6 @@ package com.android.assignment.data
 import com.android.assignment.data.api.NetworkService
 import com.android.assignment.data.model.Fact
 import com.android.assignment.util.ISchedulerProvider
-import com.android.assignment.util.SchedulerProvider
 import io.reactivex.Single
 import javax.inject.Inject
 
@@ -13,7 +12,7 @@ class Repository @Inject constructor(private val service:NetworkService, private
         return service.fetchFacts()
             .subscribeOn(schedulerProvider.io())
             .map {
-                it.rows
+                it.rows.filter { fact -> fact.title!=null }
             }
     }
 }

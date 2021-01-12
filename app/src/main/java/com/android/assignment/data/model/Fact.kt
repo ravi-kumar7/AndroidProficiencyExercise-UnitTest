@@ -15,7 +15,7 @@ data class Fact(
 
         @BindingAdapter("android:src")
         @JvmStatic
-        fun loadImage(view: ImageView, res:String)
+        fun loadImage(view: ImageView, res:String?)
         {
             Glide.with(view.context).load(res).fitCenter().error(R.drawable.ic_image).fallback(R.drawable.ic_image).into(view)
         }

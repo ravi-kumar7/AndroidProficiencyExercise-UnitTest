@@ -15,8 +15,8 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
-    lateinit var factAdapter: FactAdapter
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var factAdapter: FactAdapter
     private val factsList: ArrayList<Fact> = ArrayList()
     @Inject
     lateinit var viewModel: MainViewModel
@@ -35,13 +35,14 @@ class MainActivity : AppCompatActivity() {
                 State.Loading -> showMessage(R.string.loading)
                 is State.Success<*> -> {
                     factsList.clear()
-                    factsList.addAll(it as List<Fact>)
+                    factsList.addAll(it.data as List<Fact>)
                     factAdapter.notifyDataSetChanged()
                 }
                 is State.Error -> showMessage(it.msg,true)
                 else ->{ }
             }
         })
+        viewModel.loadFacts()
     }
 
     private fun showMessage(@StringRes msg:Int, retry:Boolean = false)
